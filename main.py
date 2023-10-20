@@ -4,8 +4,8 @@ inventory = {}
 # Function to add items to the inventory.
 def add_item():
     name = input("Enter the item name: ")
-    quantity = int(input("Enter the quantity: ")
-    
+    quantity = int(input("Enter the quantity: "))
+    # Added Parantheses
     # Check if the item is already in the inventory and update its quantity.
     if name in inventory:
         inventory[name] += quantity
@@ -15,8 +15,12 @@ def add_item():
 
 # Function to remove items from the inventory.
 def remove_item():
-    name = input("Enter the item name to remove: ")
-    
+    try:
+     name = input("Enter the item name to remove: ")
+    except:
+        print("Unable to convert to an interger.")
+    finally:
+        name = input("Enter the item name to remove: ")
     # Check if the item is in the inventory.
     if name in inventory:
         quantity = int(input("Enter the quantity to remove: "))
